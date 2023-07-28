@@ -24,7 +24,11 @@ jobs:
         uses: bahmutov/npm-install@v1
 
       - name: Build project
-        run: npm run build
+        run: |
+          echo "PRAXLY_PATH : $PRAXLY_PATH"
+          npm run build
+        env:
+          PRAXLY_PATH: ${{ vars.PRAXLY_PATH }}
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3
