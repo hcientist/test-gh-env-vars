@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+env:
+  # Setting an environment variable with the value of a configuration variable
+  PRAXLY_PATH: ${{ vars.PRAXLY_PATH }}
 
 jobs:
   build:
